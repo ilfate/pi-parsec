@@ -2,10 +2,10 @@ html, body {
   height: 100%;
   margin: 0; }
 
-.moving-block, .text-clicker {
+.text-clicker {
   transition: margin 350ms 10ms, width 350ms 10ms, height 350ms 10ms; }
 
-.unselectable, .text-clicker {
+.text-clicker {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

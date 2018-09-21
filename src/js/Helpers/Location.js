@@ -12,7 +12,7 @@ export default class Location {
     get styles() {
         switch (this.type) {
             case TYPE_CENTER:
-                return {'margin': '0 auto', 'left': 0, 'right': 0};
+                return {'margin': '0 auto', 'left': 0, 'right': 0, top: 150};
                 break;
             case Location.TYPE_CUSTOM:
                 return {'margin': `${this.top > 0 ? this.top + 'px' : 0} 0 0 ${this.left > 0 ? this.left + 'px' : 0}`};

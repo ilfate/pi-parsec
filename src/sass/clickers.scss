@@ -1,8 +1,8 @@
 
 
 .text-clicker {
-    @extend .unselectable;
-    @extend .moving-block;
+    @extend %unselectable;
+    @extend %moving-block;
     position: absolute;
     width: 100px;
     height: 100px;

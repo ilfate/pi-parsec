@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import TextClicker from "./Clickers/TextClicker";
 import GameStore from "./Stores/GameStore";
-import Location from "./Helpers/Location";
+import ChapterStore from "./Stores/ChapterStore";
+import ChapterManager from "./Chapters/ChapterManager";
 
 
 const gameStore = new GameStore();
@@ -13,15 +13,11 @@ class Game extends Component {
     }
 
   render() {
-    let textClickerLocation = new Location();
-    // textClickerLocation.type = Location.TYPE_CENTER;
-    textClickerLocation.top = 15;
-    textClickerLocation.left = 500;
+
 
     return (
         <div className="game-container">
-            <h1 style={{'color':'blue'}}>Game</h1>
-            {/*<TextClicker store={gameStore} location={textClickerLocation}/>*/}
+            <ChapterManager store={gameStore} />
 
         </div>
     );

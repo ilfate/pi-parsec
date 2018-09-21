@@ -16,8 +16,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "build-css": "node-sass-chokidar src/App.scss -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/App.scss -o src/ --watch --recursive"
   },
   "devDependencies": {
     "babel-preset-mobx": "^2.0.0",

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ChapterIntro from "./001-Intro/ChapterIntro";
 
 const CHAPTER_INTRO = '001-intro',
     TYPE_CENTER = 'center';
@@ -8,21 +9,21 @@ class ChapterManager extends Component {
 
 
     render() {
-        let textClickerLocation = new Location();
-        // textClickerLocation.type = Location.TYPE_CENTER;
-        textClickerLocation.top = 15;
-        textClickerLocation.left = 500;
+        const { store } = this.props;
+        const chapterStore = store.chapter;
+        let content;
+        switch (chapterStore.name) {
+            case CHAPTER_INTRO:
+                content = <ChapterIntro store={store}/>;
+                break;
+        }
 
         return (
-            <div className="game-container">
-                <h1 style={{'color':'blue'}}>Game</h1>
-                {/*<TextClicker store={gameStore} location={textClickerLocation}/>*/}
-
-            </div>
+            content
         );
     }
 
-    static get TYPE_CUSTOM() { return TYPE_CUSTOM; }
+    static get CHAPTER_INTRO() { return CHAPTER_INTRO; }
 }
 
 export default ChapterManager;
