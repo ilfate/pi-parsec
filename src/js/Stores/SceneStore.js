@@ -3,16 +3,16 @@ import { observable, action } from "mobx";
 
 class SceneStore {
     @observable name = '';
-    @observable progress = 0;
+    @observable status = '';
 
     @action.bound setName(chapter) {
         this.name = chapter;
     }
-
-    @action.bound increment() {
-        console.log('s');
-        this.progress++;
+    @action.bound stepFinished(nextStep) {
+        this.status = nextStep;
     }
+
+
 }
 
 

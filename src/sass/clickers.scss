@@ -4,8 +4,13 @@
     @extend %unselectable;
     @extend %moving-block;
     position: absolute;
-    width: 100px;
-    height: 100px;
     border: 1px solid #0000F0;
     color: #0000F0;
+}
+
+
+.box-clicker {
+    svg {
+        position: absolute;
+    }
 }

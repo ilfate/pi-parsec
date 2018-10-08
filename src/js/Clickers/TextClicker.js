@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
-import { action } from "mobx";
+import { observer, inject } from 'mobx-react';
+import { observable, action } from 'mobx';
 
-
+@inject("store")
 @observer
 class TextClicker extends Component {
+
+    @observable progress = 0;
 
     constructor(props) {
         super(props);
         this.onClick = this.onClick.bind(this);
     }
 
-    onClick() {
+    @action onClick() {
         const { store, location } = this.props;
         store.increment();
+        this.progress ++;
     }
 
     render() {
@@ -24,8 +27,8 @@ class TextClicker extends Component {
             let totalWas = total;
             const length = line.split(' ').length;
             total += length;
-            if (!currentLine && total >= store.progress) {
-                const diff = store.progress - totalWas;
+            if (!currentLine && total >= this.progress) {
+                const diff = this.progress - totalWas;
                 currentLine = line.split(' ').slice(0, diff).join(' ');
             }
         });

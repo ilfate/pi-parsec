@@ -1,0 +1,27 @@
+
+
+
+//path {
+//    stroke-dasharray: 100;
+//    animation: dash 5s linear;
+//}
+//
+@keyframes dash {
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
+
+svg.animated path{
+    transition: stroke-dashoffset 350ms 10ms;
+    //animation: dash 1s linear;
+}
+
+.svg {
+    border: 1px solid #12BA34;
+}
+
+//.svg-line {
+//    stroke-dasharray: 1000;
+//    stroke-dashoffset: 1000;
+//}

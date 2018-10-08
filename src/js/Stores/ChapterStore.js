@@ -8,11 +8,6 @@ class ChapterStore {
     @observable name = '';
     @observable scene = sceneStore;
 
-    @action.bound increment() {
-        this.scene.increment();
-        console.log('c');
-    }
-
     @action.bound setName(chapter) {
         this.name = chapter;
     }

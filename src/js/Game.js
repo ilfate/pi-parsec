@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GameStore from "./Stores/GameStore";
-import ChapterStore from "./Stores/ChapterStore";
 import ChapterManager from "./Chapters/ChapterManager";
+import { Provider } from "mobx-react";
 
 
 const gameStore = new GameStore();
@@ -12,16 +12,17 @@ class Game extends Component {
         super(props);
     }
 
-  render() {
+    render() {
+        return (
+            <Provider store={gameStore}>
 
+                <div className="game-container">
+                    <ChapterManager />
 
-    return (
-        <div className="game-container">
-            <ChapterManager store={gameStore} />
-
-        </div>
-    );
-  }
+                </div>
+            </Provider>
+        );
+    }
 }
 
 export default Game;

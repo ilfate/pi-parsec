@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import SceneWhatAmI from "./Scene-1-WhatAmI/SceneWhatAmI";
+import { inject } from "mobx-react";
 
 const SCENE_1 = 'who am I';
 
+@inject("store")
 class ChapterIntro extends Component {
 
     constructor(props) {
@@ -18,7 +20,7 @@ class ChapterIntro extends Component {
         let content;
         switch (scene.name) {
             case SCENE_1:
-                content = <SceneWhatAmI store={this.props.store}/>;
+                content = <SceneWhatAmI />;
                 break;
         }
 

@@ -11,13 +11,15 @@ class GameStore {
     @observable chapter = chapterStore;
 
     @action.bound increment() {
-        console.log('g');
         this.clicks++;
-        this.chapter.increment();
     }
 
     @action.bound setChapter(chapter) {
         this.chapter = chapter;
+    }
+
+    @action.bound sceneStepFinished(nextStep) {
+        this.chapter.scene.stepFinished(nextStep);
     }
 
     @computed get progress() {
