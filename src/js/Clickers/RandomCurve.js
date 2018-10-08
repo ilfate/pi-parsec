@@ -34,6 +34,10 @@ class RandomCurve extends Component {
         target.y = e.nativeEvent.offsetY / location.height;
         this.target = target;
         this.seeds = [Math.random(), Math.random(), Math.random(), Math.random()];
+        console.log(this.target.x, this.target.y);
+
+
+
         setTimeout(this.afterRender, 10);
     }
 
@@ -64,7 +68,7 @@ class RandomCurve extends Component {
                  style={location.styles}
 
             >
-
+                <span style={{position: 'absolute'}}>{this.length}</span>{[0,1,2,3].map((key) =>
                         <Svg onClick={this.onClick} id={key}
                              length={this.lengths[key]}
                              seeds={this.seeds}
